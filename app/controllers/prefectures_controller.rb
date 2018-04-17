@@ -10,7 +10,7 @@ class PrefecturesController < ApplicationController
 
   # GET /prefectures/1
   def show
-    render json: @prefecture
+    render json: @prefecture.to_json(:include => :plans)
   end
 
   # POST /prefectures

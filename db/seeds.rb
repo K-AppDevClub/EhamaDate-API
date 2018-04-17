@@ -56,3 +56,5 @@ Prefecture.create(region_id: 8, name: '大分県')
 Prefecture.create(region_id: 8, name: '宮崎県')
 Prefecture.create(region_id: 8, name: '鹿児島県')
 Prefecture.create(region_id: 8, name: '沖縄県');
+
+Plan.create(title:'江浜が考えるデート', detail:'ああい')
