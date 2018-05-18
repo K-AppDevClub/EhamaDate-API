@@ -5,12 +5,12 @@ class PlansController < ApplicationController
   def index
     @plans = Plan.all
 
-    render json: @plans
+    render json: @plans.to_json(:include => :courses)
   end
 
   # GET /plans/1
   def show
-    render json: @plan
+    render json: @plan.to_json(:include => :courses)
   end
 
   # POST /plans
@@ -46,6 +46,7 @@ class PlansController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def plan_params
-      params.require(:plan).permit(:title, :detail, :thumbnail, :comment, :prefecture_id, courses_attributes: [:plan_id, :spot_id, :time])
+      params.require(:plan).permit(:title, :detail, :comment, :prefecture_id, 
+        courses_attributes: [:plan_id, :place_id, :name, :description, :time, :thumbnail])
     end
 end

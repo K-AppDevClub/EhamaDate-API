@@ -4,7 +4,6 @@ class CreatePlans < ActiveRecord::Migration[5.1]
       t.prefecture_id :integer, :null => false
       t.string :title
       t.text :detail
-      t.binary :thumbnail
       t.text :comment
 
       t.timestamps
